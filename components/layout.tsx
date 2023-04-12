@@ -3,8 +3,12 @@ import Head from 'next/head';
 import Navbar from './navbar';
 import Footer from './footer';
 
+interface LayoutProps {
+    children: React.ReactNode;
+}
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+
+const Layout: NextPage<LayoutProps> = ({ children }) => {
     return (
         <>
             <Head>
@@ -18,3 +22,5 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </>
     );
 }
+
+export default Layout;

@@ -2,10 +2,15 @@ import React from 'react';
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
+import { NextPage } from 'next';
 
-const Navbar = () => {
+
+
+const Navbar: NextPage = () => {
     const router = useRouter();
     const currentPath = router.pathname;
+
+
 
     return (
         <header>
@@ -15,14 +20,14 @@ const Navbar = () => {
                         <div className="flex items-center">
                             <Link className="flex items-center" href="/">
                                 <Image
-                                    src="/logo/logo-black.svg"
+                                    src="/logo/logo-no-background.svg"
                                     width={80}
                                     height={80}
                                     alt="logo"
                                 />
-                                <h1 className="bg-blue-900 text-white text-lg ml-2">
+                                {/* <h1 className="bg-blue-900 text-white text-lg ml-2">
                                     MingleHub
-                                </h1>
+                                </h1> */}
                             </Link>
 
                         </div>
@@ -34,14 +39,10 @@ const Navbar = () => {
                             </Link>
 
 
-                            <Link href="/intro" className={`text-md font-medium px-3 py-2 rounded-md ${currentPath === "/intro" ? "text-gray-800" : "text-gray-300"} hover:text-gray-800`}>
+                            <Link href="/about" className={`text-md font-medium px-3 py-2 rounded-md ${currentPath === "/intro" ? "text-gray-800" : "text-gray-300"} hover:text-gray-800`}>
                                 About
                             </Link>
 
-
-                            <Link href="/launching" className={`text-md font-medium px-3 py-2 rounded-md ${currentPath === "/launching" ? "text-gray-800" : "text-gray-300"} hover:text-gray-800`}>
-                                Projects
-                            </Link>
                             <Link href="/contact" className={`text-md font-medium px-3 py-2 rounded-md ${currentPath === "/contact" ? "text-gray-800" : "text-gray-300"} hover:text-gray-800`}>
                                 Contact
                             </Link>
